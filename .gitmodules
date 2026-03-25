@@ -1,0 +1,15 @@
+[submodule "tools/worldmonitor"]
+	path = tools/worldmonitor
+	url = https://github.com/koala73/worldmonitor.git
+[submodule "tools/sherlock"]
+	path = tools/sherlock
+	url = https://github.com/sherlock-project/sherlock.git
+[submodule "tools/cline-src"]
+	path = tools/cline-src
+	url = https://github.com/cline/cline.git
+[submodule "tools/cobalt"]
+	path = tools/cobalt
+	url = https://github.com/imputnet/cobalt.git
+[submodule "tools/AllHackingTools"]
+	path = tools/AllHackingTools
+	url = https://github.com/mishakorzik/AllHackingTools.git
