@@ -1,0 +1,26 @@
+{
+  "name": "outlier-task-assistant",
+  "private": true,
+  "type": "module",
+  "description": "Outlier.ai coding-task domain assistant (Agent SDK)",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "validate": "npx --yes @grok/agent-sdk@0.6.0 validate --dir .",
+    "info": "npx --yes @grok/agent-sdk@0.6.0 info --dir . --json",
+    "dev": "npx --yes @grok/agent-sdk@0.6.0 dev .",
+    "serve": "npx --yes @grok/agent-sdk@0.6.0 serve --dir . --mode single --dev",
+    "eval:list": "npx --yes @grok/agent-sdk@0.6.0 eval --dir . --list",
+    "eval:smoke": "npx --yes @grok/agent-sdk@0.6.0 eval --dir . --tag smoke",
+    "tool:presubmit": "npx --yes @grok/agent-sdk@0.6.0 tool call presubmit_blockers --dir . --json --input '{\"task_type\":\"review\"}'",
+    "tool:take-skip": "npx --yes @grok/agent-sdk@0.6.0 tool call take_skip_advisor --dir . --json --input '{\"shown_rate_usd_per_hr\":27.5,\"skill_fit\":\"strong\",\"guidelines_clear\":true,\"finishes_inside_estimate\":true}'",
+    "tool:earnings": "npx --yes @grok/agent-sdk@0.6.0 tool call format_earnings_row --dir . --json --input '{\"date\":\"2026-11-03\",\"task_id\":\"TASK-1\",\"task_type\":\"review\",\"title_short\":\"sample\",\"status\":\"submitted\",\"minutes\":45,\"rate_or_offer\":\"27.50\",\"amount_earned\":\"20.63\",\"payout_status\":\"pending\"}'"
+  },
+  "dependencies": {
+    "@grok/agent-sdk": "^0.6.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "6.0.3"
+  }
+}
