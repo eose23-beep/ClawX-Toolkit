@@ -1,0 +1,31 @@
+{
+  "name": "online-income-ops",
+  "private": true,
+  "type": "module",
+  "description": "Online-only multi-stream USD ops assistant (DataAnnotation, Etsy, Alignerr, Mercor) — Agent SDK",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "validate": "npx --yes @grok/agent-sdk@0.6.0 validate --dir .",
+    "info": "npx --yes @grok/agent-sdk@0.6.0 info --dir . --json",
+    "dev": "npx --yes @grok/agent-sdk@0.6.0 dev .",
+    "serve": "npx --yes @grok/agent-sdk@0.6.0 serve --dir . --mode single --dev",
+    "eval:list": "npx --yes @grok/agent-sdk@0.6.0 eval --dir . --list",
+    "eval:smoke": "npx --yes @grok/agent-sdk@0.6.0 eval --dir . --tag smoke",
+    "tool:da-day": "npx --yes @grok/agent-sdk@0.6.0 tool call dataannotation_day_checklist --dir . --json --input '{\"phase\":\"assessment\"}'",
+    "tool:etsy": "npx --yes @grok/agent-sdk@0.6.0 tool call etsy_listing_checklist --dir . --json --input '{\"product_kind\":\"digital\"}'",
+    "tool:apply": "npx --yes @grok/agent-sdk@0.6.0 tool call alignerr_mercor_apply_checklist --dir . --json --input '{\"platform\":\"alignerr\"}'",
+    "tool:listing-draft": "npx --yes @grok/agent-sdk@0.6.0 tool call format_etsy_listing_draft --dir . --json --input '{\"niche\":\"CA student planner printables\",\"product_name\":\"Weekly Focus Planner PDF\",\"product_kind\":\"digital\",\"price_usd\":9.99,\"outcome\":\"plan the week in 10 minutes\",\"audience\":\"college students in California\",\"tags\":[\"student planner\",\"weekly planner\",\"printable planner\",\"college printable\",\"study planner\",\"habit tracker\",\"digital download\",\"pdf planner\",\"california student\",\"focus planner\",\"agenda printable\",\"productivity pdf\",\"back to school\"],\"whats_included\":[\"1 PDF weekly planner\",\"print + fillable tips page\"],\"faq\":[{\"q\":\"Is this a physical product?\",\"a\":\"No — instant digital download after purchase.\"}]}'",
+    "tool:earnings": "npx --yes @grok/agent-sdk@0.6.0 tool call format_earnings_row --dir . --json --input '{\"date\":\"2026-11-05\",\"stream\":\"dataannotation\",\"task_id\":\"DA-ONBOARD\",\"task_type\":\"assessment\",\"title_short\":\"coding starter assessment\",\"status\":\"submitted\",\"minutes\":90,\"rate_or_offer\":\"uncertain\",\"amount_earned\":\"\",\"payout_status\":\"na\",\"notes\":\"one attempt — awaiting approval email\"}'"
+  },
+  "dependencies": {
+    "@grok/agent-sdk": "^0.6.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "6.0.3"
+  }
+}
