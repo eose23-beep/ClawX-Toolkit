@@ -2,7 +2,10 @@
   "name": "outlier-task-assistant",
   "private": true,
   "type": "module",
-  "description": "Outlier.ai coding-task domain assistant (Agent SDK)",
+  "description": "Phase 1 AI coding-task domain assistant (Outlier/DataAnnotation) — Agent SDK",
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "check": "tsc --noEmit",
     "validate": "npx --yes @grok/agent-sdk@0.6.0 validate --dir .",

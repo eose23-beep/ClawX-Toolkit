@@ -3,16 +3,16 @@ import * as z from "zod/v4";
 
 export default defineTool({
   description:
-    "Format one Outlier earnings-tracker CSV row (header-compatible) for the user to paste.",
+    "Format one earnings-tracker CSV row (header-compatible) for the user to paste.",
   effect: "read",
   execution: "server",
   inputSchema: z.object({
-    date: z.string(),
-    task_id: z.string(),
-    task_type: z.string(),
-    title_short: z.string(),
-    status: z.string(),
-    minutes: z.number(),
+    date: z.string().min(1),
+    task_id: z.string().min(1),
+    task_type: z.string().min(1),
+    title_short: z.string().min(1),
+    status: z.string().min(1),
+    minutes: z.number().finite().nonnegative(),
     rate_or_offer: z.string().optional(),
     amount_earned: z.string().optional(),
     payout_status: z.string().default("pending"),
@@ -24,7 +24,7 @@ export default defineTool({
     const amount = input.amount_earned ?? "";
     let effective_hourly = "";
     const amountNum = Number(amount);
-    if (amount !== "" && !Number.isNaN(amountNum) && duration_hours > 0) {
+    if (amount !== "" && Number.isFinite(amountNum) && duration_hours > 0) {
       effective_hourly = String(Math.round((amountNum / duration_hours) * 100) / 100);
     }
     const cells = [

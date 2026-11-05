@@ -1,6 +1,6 @@
 # outlier-task-assistant
 
-Agent SDK domain assistant for Outlier.ai coding-task workflows (Project OUTLIER).
+Agent SDK domain assistant for Phase 1 AI coding-task workflows (Outlier / DataAnnotation; Project OUTLIER).
 
 | | |
 | --- | --- |
